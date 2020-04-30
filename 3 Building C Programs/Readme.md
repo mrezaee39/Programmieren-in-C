@@ -44,9 +44,9 @@ gcc -c fibonacci_test.c test.c
 ```
 
 to compile both files with one command.
-The `main.c` file can be compiled the same way, but
+**The `main.c` file can be compiled the same way, but
 emits a warning. What do you have to add to `fibonacci_test.h`
-to get rid of that warning?
+to get rid of that warning?**
 
 Now you should see the object files `test.o` and `fibonacci_test.o`
 in the project folder. A library is an archive containing
@@ -111,7 +111,10 @@ file by running
 ```shell script
 nm main
 ```
-How does the output differ from the output for the library and what is the reason for
-this result?
+**How does the output differ from the output for the library and what is the reason for
+this result?**
 
-
+**When looking at the `fibonacci_test.c` file you will notice
+three include directives. Strictly speaking one of them
+is not necessary. Which one is that and why do we list
+it anyway?**
