@@ -1,0 +1,183 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+/*************************
+ * Function Declarations *
+ *************************/
+void
+checkThatStringIsHelloWorld(const char *string);
+
+void
+checkForIncrementallyIncreasingSequence(int *sequence);
+
+int
+sumNumbersUpTo(int to);
+
+void
+printCheckResult(bool condition);
+
+/******************************
+ * Your exercise starts here!
+ *
+ * The exercise consists of a sequence
+ * of checks. Your task is to adjust
+ * the corresponding code to make each
+ * check pass. Each check will print
+ * either "Wrong" or "Correct"
+ * on your terminal. The check has
+ * passed if it printed "Correct".
+ *
+ * You can safely ignore the function
+ * declarations above and function
+ * definitions below the main function.
+ *
+ * Don't forget to recompile your
+ * program after any changes!
+ *******************************/
+int
+main(void)
+{
+    // 1. Initialize the array with the correct "Hello, World!" string
+    char helloWorld[20] = "";
+    checkThatStringIsHelloWorld(helloWorld);
+
+    // 2. adjust the values of firstCondition and secondCondition to make the check pass
+    puts("2. Entering else if statement check...");
+    bool firstCondition = true;
+    bool secondCondition = true;
+    if (firstCondition)
+    {
+        puts("Wrong\n");
+    }
+    else if (!secondCondition)
+    {
+        puts("Correct\n");
+    }
+    else
+    {
+        puts("Wrong\n");
+    }
+
+    // 3. Fill the array numbers with the numbers from 0 to 9
+    int replace_this_counter = 26;
+    int numbers[10];
+    for (; replace_this_counter < 10; )
+    {
+        numbers[replace_this_counter] = replace_this_counter;
+    }
+    checkForIncrementallyIncreasingSequence(numbers);
+
+    /*  4.
+     *  change the value of switch_case_number
+     *  and add one line to one of the cases
+     *  so that the check passes (prints "Correct")
+     */
+    int switch_case_number = 0;
+    puts("4. Entering switch case check...");
+    bool switch_case_correct = false;
+    switch(switch_case_number)
+    {
+        case 0:
+            break;
+        case 1:
+            switch_case_correct = true;
+        case 2:
+            switch_case_correct = false;
+        default:
+            break;
+    }
+    printCheckResult(switch_case_correct);
+
+    /* 5.
+     * In the task below the boolean expression in the while
+     * loop is messed up. Correct it to make the test pass.
+     */
+    puts("5. Entering while loop check...");
+    int set_of_numbers[] =  {0, 4, 8, 1, 9, 5, 6, 2, 3};
+    int index = 0;
+    int first_number_greater4_smaller6 = set_of_numbers[index];
+
+    while(4 < first_number_greater4_smaller6
+          && first_number_greater4_smaller6 < 6)
+    {
+        index++;
+        first_number_greater4_smaller6 = set_of_numbers[index];
+    }
+    printCheckResult(first_number_greater4_smaller6 == 5);
+
+    /* 6.
+     * In this task we want to perform a calculation
+     * several times for different variables.
+     * This would lead to the for loop below
+     * being repeated several times. Instead
+     * of copy-pasting it is a good idea
+     * to restructure the code and move that
+     * calculation to a function. In line 142
+     * you'll find an empty function definition.
+     * Move the algorithm there to make the checks
+     * pass.
+     *
+     * You'll have to slightly adjust the code fragment.
+     */
+
+    puts("6. Entering function call check... (will perform two checks)");
+    int sum = 0;
+    for (int to = 5; to > 0; to--)
+    {
+        sum += to;
+    }
+
+    int result = sumNumbersUpTo(50);
+    printCheckResult(result == 1275);
+
+    result = sumNumbersUpTo(30);
+    printCheckResult(result == 465);
+
+    return 0;
+}
+
+
+int
+sumNumbersUpTo(int to)
+{
+    // Your code...
+    return 0;
+}
+
+
+/************************
+ * Function Definitions *
+ ************************/
+void
+checkThatStringIsHelloWorld(const char *string)
+{
+    puts("1. Checking Hello World...");
+    char hello[] = "Hello, World!";
+    printCheckResult(strcmp(string, hello) == 0);
+}
+
+void
+checkForIncrementallyIncreasingSequence(int *sequence)
+{
+    bool sequence_correct = true;
+    puts("3. Checking that Sequence is incrementally increasing...");
+    for (int counter = 0; counter < 10 & sequence_correct; counter++)
+    {
+        sequence_correct = (sequence[counter] == counter);
+    }
+    printCheckResult(sequence_correct);
+}
+
+void
+printCheckResult(bool condition)
+{
+    if (condition)
+    {
+        puts("Correct\n");
+    }
+    else
+    {
+        puts("Wrong\n");
+    }
+}
