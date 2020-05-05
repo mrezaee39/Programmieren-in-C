@@ -39,13 +39,13 @@ int
 main(void)
 {
     // 1. Initialize the array with the correct "Hello, World!" string
-    char helloWorld[20] = "";
+    char helloWorld[20] = "Hello, World!";
     checkThatStringIsHelloWorld(helloWorld);
 
     // 2. adjust the values of firstCondition and secondCondition to make the check pass
     puts("2. Entering else if statement check...");
-    bool firstCondition = true;
-    bool secondCondition = true;
+    int firstCondition = 0;
+    int secondCondition = 0;
     if (firstCondition)
     {
         puts("Wrong\n");
@@ -60,9 +60,8 @@ main(void)
     }
 
     // 3. Fill the array numbers with the numbers from 0 to 9
-    int replace_this_counter = 26;
     int numbers[10];
-    for (; replace_this_counter < 10; )
+    for (int replace_this_counter = 0; replace_this_counter < 10; replace_this_counter++)
     {
         numbers[replace_this_counter] = replace_this_counter;
     }
@@ -73,7 +72,7 @@ main(void)
      *  and add one line to one of the cases
      *  so that the check passes (prints "Correct")
      */
-    int switch_case_number = 0;
+    int switch_case_number = 1;
     puts("4. Entering switch case check...");
     bool switch_case_correct = false;
     switch(switch_case_number)
@@ -82,6 +81,7 @@ main(void)
             break;
         case 1:
             switch_case_correct = true;
+            break;
         case 2:
             switch_case_correct = false;
         default:
@@ -98,12 +98,13 @@ main(void)
     int index = 0;
     int first_number_greater4_smaller6 = set_of_numbers[index];
 
-    while(4 < first_number_greater4_smaller6
-          && first_number_greater4_smaller6 < 6)
+    while(!(4 < set_of_numbers[index]
+          && set_of_numbers[index] < 6))
     {
         index++;
-        first_number_greater4_smaller6 = set_of_numbers[index];
     }
+
+    first_number_greater4_smaller6 = set_of_numbers[index];
     printCheckResult(first_number_greater4_smaller6 == 5);
 
     /* 6.
@@ -137,12 +138,16 @@ main(void)
     return 0;
 }
 
-
 int
 sumNumbersUpTo(int to)
 {
-    // Your code...
-    return 0;
+    int sum = 0;
+    for (; to > 0; to--)
+    {
+        sum += to;
+    }
+
+    return sum;
 }
 
 
