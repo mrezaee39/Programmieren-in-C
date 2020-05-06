@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "3 Building C Programs/test.h"
+#include "test.h"
 
 void
 setCommandLineColorToRed(void)

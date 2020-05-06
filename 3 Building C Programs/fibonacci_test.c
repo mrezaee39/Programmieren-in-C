@@ -1,6 +1,6 @@
-#include "3 Building C Programs/test.h"
-#include "3 Building C Programs/fibonacci.h"
-#include "3 Building C Programs/fibonacci_test.h"
+#include "test.h"
+#include "fibonacci.h"
+#include "fibonacci_test.h"
 
 void
 run_fibonacci_test(void)

@@ -28,6 +28,13 @@ contain code that is used to test your
 fibonacci function implementation and
 provide some command line output.
 
+The compile commands you will enter during
+this exercise should all be called from the `3 Building C Programs`
+directory.
+By default the compiler searches for header files
+in the same directory that the including source file
+resides in.
+
 Take a look at the `fibonacci_test.c` file.
 This file uses the not yet implemented `fibonacci`
 function. You can still compile it with

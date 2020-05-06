@@ -22,3 +22,8 @@ In the following we assume you are using CLion.
 Every Week we will upload new content to the git repository.
 To pull in any new changes hit `Ctrl+T`,
  check `Merge incoming changes into the current branch` and hit `Enter`
+ 
+## Solutions
+There is a solutions branch that contains the solutions
+created during the exercises. To checkout the branch
+click 
