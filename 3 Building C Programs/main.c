@@ -5,4 +5,5 @@ int
 main(void)
 {
     run_fibonacci_test();
+    return 0;
 }
