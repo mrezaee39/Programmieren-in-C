@@ -8,5 +8,5 @@ add_library(test_library STATIC
         test.c
         fibonacci_test.c)
 
-add_executable(Building_C_Programs fibonacci.c)
+add_executable(Building_C_Programs fibonacci.c "../4 Data Types A - Primitive Types/main.c")
 target_link_libraries(Building_C_Programs test_library)
