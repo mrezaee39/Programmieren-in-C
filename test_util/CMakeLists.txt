@@ -1,0 +1,1 @@
+add_library(test_util STATIC src/test.c test.h src/test.h)
