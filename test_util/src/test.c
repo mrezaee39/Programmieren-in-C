@@ -68,7 +68,7 @@ assertLessInt(int expected, int actual)
     else
     {
         setCommandLineColorToRed();
-        printf("Fail.\texpected a number < %i, but got: %i\n", expected, actual);
+        printf("Fail.\texpected a %i < number, but got: %i\n", expected, actual);
         return false;
     }
 }
