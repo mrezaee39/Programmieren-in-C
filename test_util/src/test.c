@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 #include "test_util/test.h"
 #include "test_util/src/test.h"
 
@@ -91,6 +92,22 @@ assertGreaterInt(int expected, int actual)
 
 bool
 assertLessLong(long expected, long actual)
+{
+    if (expected < actual)
+    {
+        printOk();
+        return true;
+    }
+    else
+    {
+        setCommandLineColorToRed();
+        printf("Fail.\texpected a number < %ld, but got: %ld\n", expected, actual);
+        return false;
+    }
+}
+
+bool
+assertLessUInt64(uint64_t expected, uint64_t actual)
 {
     if (expected < actual)
     {

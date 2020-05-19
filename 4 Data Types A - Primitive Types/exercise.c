@@ -1,6 +1,7 @@
 #include "exercise.h"
 #include "test_util/test.h"
 #include <stdio.h>
+#include <stdint.h>
 #include "limits.h"
 
 
@@ -43,9 +44,9 @@ test_multiply(void) {
     // Why does the test below fail?
     // Assuming we do not want to change the value of the variable here,
     // how can you fix the test? (Hint: also take a look at the header file `test_util/test.h`)
-    long factor = 1000000;
+    uint64_t factor = 1000000;
     printf("%li\t", factor*factor);
-    return assertLessLong(0, factor * factor);
+    return assertLessUInt64(0, factor * factor);
 }
 
 bool

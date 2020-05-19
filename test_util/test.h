@@ -2,6 +2,7 @@
 #define BUILDING_C_PROGRAMS_TEST_H
 
 #include <stdbool.h>
+#include <stdint.h>
 
 bool
 assertEqualInt(int expected, int actual);
@@ -26,5 +27,8 @@ assertLessLong(long expected, long actual);
 
 bool
 assertEqualUInt(unsigned expected, unsigned actual);
+
+bool
+assertLessUInt64(uint64_t expected, uint64_t actual);
 
 #endif //BUILDING_C_PROGRAMS_TEST_H
