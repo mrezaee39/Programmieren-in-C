@@ -1,61 +1,35 @@
 #include <stdio.h>
-#include <stdint.h>
 #include "test_util/test.h"
 #include "test_util/src/test.h"
+
+#define assertEqualDef(TYPE, SUFFIX, FORMAT_STRING) bool \
+assertEqual ## SUFFIX(TYPE expected, TYPE actual) \
+{\
+    if (expected == actual) \
+    { \
+        printOk(); \
+        return true; \
+    } \
+    else \
+    { \
+        setCommandLineColorToRed(); \
+        printf("Fail.\texpected:" #FORMAT_STRING ", but got " #FORMAT_STRING "\n", expected, actual); \
+        return false; \
+    } \
+}
+
+assertEqualDef(unsigned long, LongHex, 0x%lx)
+assertEqualDef(int, IntHex, 0x%x)
+assertEqualDef(float, Float, %f)
+assertEqualDef(double, Double, %2.20e)
+assertEqualDef(int, Int, %i)
+assertEqualDef(unsigned, UInt, %u)
 
 bool
 assertEqualIntWithMessage(int expected, int actual, const char *message)
 {
     printMessage(message);
     return assertEqualInt(expected, actual);
-}
-
-bool
-assertEqualInt(int expected, int actual)
-{
-    if (expected == actual)
-    {
-        printOk();
-        return true;
-    }
-    else
-    {
-        setCommandLineColorToRed();
-        printf("Fail.\texpected: %i, but got: %i\n", expected, actual);
-        return false;
-    }
-}
-
-bool
-assertEqualFloat(float expected, float actual)
-{
-    if (expected == actual)
-    {
-        printOk();
-        return true;
-    } else{
-        setCommandLineColorToRed();
-        printf("Fail.\texpected: %f, but got: %f\n", expected, actual);
-        return false;
-    }
-}
-
-bool
-assertEqualDouble(double expected, double actual)
-{
-    if (expected == actual)
-    {
-        printOk();
-        return true;
-    } else{
-        setCommandLineColorToRed();
-        printf("Fail.\texpected: %.20e, but got: %.20e\n", expected, actual);
-//        printf("hexadecimal representations:\n\t%lx\n\t%lx\n",
-//                *(unsigned long *)(&expected),
-//                *(unsigned long *)(&actual));
-        return false;
-
-    }
 }
 
 bool
@@ -69,7 +43,7 @@ assertLessInt(int expected, int actual)
     else
     {
         setCommandLineColorToRed();
-        printf("Fail.\texpected a %i < number, but got: %i\n", expected, actual);
+        printf("Fail.\texpected a number < %i, but got: %i\n", expected, actual);
         return false;
     }
 }
@@ -106,36 +80,11 @@ assertLessLong(long expected, long actual)
     }
 }
 
-bool
-assertLessUInt64(uint64_t expected, uint64_t actual)
+void
+printTestIndex(int index)
 {
-    if (expected < actual)
-    {
-        printOk();
-        return true;
-    }
-    else
-    {
-        setCommandLineColorToRed();
-        printf("Fail.\texpected a number < %ld, but got: %ld\n", expected, actual);
-        return false;
-    }
-}
-
-bool
-assertEqualUInt(unsigned expected, unsigned actual)
-{
-    if (expected == actual)
-    {
-        printOk();
-        return true;
-    }
-    else
-    {
-        setCommandLineColorToRed();
-        printf("Fail.\texpected %u, but got: %u\n", expected, actual);
-        return false;
-    }
+    resetCommandLineColor();
+    printf("test index %i: ", index);
 }
 
 void
@@ -168,4 +117,10 @@ printOk(void)
 {
     setCommandLineColorToGreen();
     printf("Ok.\n");
+}
+
+int
+evaluateTestSuite(TestSuite suite)
+{
+    return !suite.passed;
 }
