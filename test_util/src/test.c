@@ -118,3 +118,9 @@ printOk(void)
     setCommandLineColorToGreen();
     printf("Ok.\n");
 }
+
+int
+evaluateTestSuite(TestSuite suite)
+{
+    return !suite.passed;
+}

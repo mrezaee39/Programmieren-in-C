@@ -37,4 +37,25 @@ assertEqualUInt(unsigned expected, unsigned actual);
 void
 printTestIndex(int index);
 
+typedef struct TestSuite TestSuite;
+
+/**
+ * Checks the passed member of a test suite and
+ * returns the matching exit code for the main function.
+ * Intended use case is
+ * ```
+ * int main(void){
+ *   test_myTest();
+ *   return evaluateTestSuite(my_test_suite);
+ * }
+ */
+int
+evaluateTestSuite(TestSuite);
+
+struct TestSuite
+{
+    bool passed;
+    uint8_t number_of_tests;
+};
+
 #endif //BUILDING_C_PROGRAMS_TEST_H
