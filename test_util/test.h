@@ -5,16 +5,16 @@
 #include <stdint.h>
 
 bool
-assertEqualInt(int expected, int actual);
+assertEqualInt(int32_t expected, int32_t actual);
 
 bool
-assertEqualIntHex(int expected, int actual);
+assertEqualIntHex(int32_t expected, int32_t actual);
 
 bool
-assertEqualIntWithMessage(int expected, int actual, const char *message);
+assertEqualIntWithMessage(int32_t expected, int32_t actual, const char *message);
 
 bool
-assertEqualLongHex(unsigned long expected, unsigned long actual);
+assertEqualLongHex(uint64_t expected, uint64_t actual);
 
 bool
 assertEqualFloat(float expected, float actual);
@@ -23,19 +23,19 @@ bool
 assertEqualDouble(double expected, double actual);
 
 bool
-assertLessInt(int expected, int actual);
+assertLessInt(int32_t expected, int32_t actual);
 
 bool
-assertGreaterInt(int expected, int actual);
+assertGreaterInt(int32_t expected, int32_t actual);
 
 bool
-assertLessLong(long expected, long actual);
+assertLessLong(int64_t expected, int64_t actual);
 
 bool
 assertEqualUInt(unsigned expected, unsigned actual);
 
 void
-printTestIndex(int index);
+printTestIndex(int32_t index);
 
 typedef struct TestSuite TestSuite;
 
