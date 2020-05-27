@@ -48,7 +48,7 @@ test_custom_float_mantisse_is_correct(void)
 {
     ieee_float64 my_float = {.number = 1.5};
     assertEqualLongHex(0x8000000000000, my_float.fields.mantisse);
-    return assertEqualInt(1022, my_float.fields.exponent);
+    return assertEqualInt(1023, my_float.fields.exponent);
 }
 
 bool
