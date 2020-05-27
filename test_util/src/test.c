@@ -18,22 +18,22 @@ assertEqual ## SUFFIX(TYPE expected, TYPE actual) \
     } \
 }
 
-assertEqualDef(unsigned long, LongHex, 0x%lx)
-assertEqualDef(int, IntHex, 0x%x)
+assertEqualDef(uint64_t , LongHex, 0x%lx)
+assertEqualDef(int32_t , IntHex, 0x%x)
 assertEqualDef(float, Float, %f)
 assertEqualDef(double, Double, %2.20e)
-assertEqualDef(int, Int, %i)
-assertEqualDef(unsigned, UInt, %u)
+assertEqualDef(int32_t, Int, %i)
+assertEqualDef(uint32_t , UInt, %u)
 
 bool
-assertEqualIntWithMessage(int expected, int actual, const char *message)
+assertEqualIntWithMessage(int32_t expected, int32_t actual, const char *message)
 {
     printMessage(message);
     return assertEqualInt(expected, actual);
 }
 
 bool
-assertLessInt(int expected, int actual)
+assertLessInt(int32_t expected, int32_t actual)
 {
     if (expected < actual)
     {
@@ -49,7 +49,7 @@ assertLessInt(int expected, int actual)
 }
 
 bool
-assertGreaterInt(int expected, int actual)
+assertGreaterInt(int32_t expected, int32_t actual)
 {
     if (expected > actual)
     {
@@ -65,7 +65,7 @@ assertGreaterInt(int expected, int actual)
 }
 
 bool
-assertLessLong(long expected, long actual)
+assertLessLong(int64_t expected, int64_t actual)
 {
     if (expected < actual)
     {
@@ -81,7 +81,7 @@ assertLessLong(long expected, long actual)
 }
 
 void
-printTestIndex(int index)
+printTestIndex(int32_t index)
 {
     resetCommandLineColor();
     printf("test index %i: ", index);
