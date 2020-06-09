@@ -1,4 +1,5 @@
 #include "exercise.h"
+#include "test_util/test.h"
 
 int
 main(void)
@@ -9,6 +10,10 @@ main(void)
      * variable `exercise7` and set the
      * `passed` member to false.
      */
-    test_Failing();
+    TestSuite *exercise7 = createTestSuite(5);
+    test_Failing(exercise7);
+    addPassResult(exercise7);
+    addFailResult(exercise7);
+    addPassResult(exercise7);
     return evaluateTestSuite(exercise7);
 }

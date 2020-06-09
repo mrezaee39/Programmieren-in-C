@@ -4,7 +4,8 @@ from this week's lecture about functions.
 Again there are a couple of mistakes in the code that you'll have to
 fix.
 
-* multiple definition of `exercise7`: why does this error occur? There are at least two possible ways to fix this. What are pros and cons for each of them?
+* multiple definition of `exercise7`: why does this error occur? There are at least two possible ways to fix this. 
+    What are pros and cons for each of them?
 
 ### Extending the `test_util` library
 From now on we will incrementally extend and change the `test_util` library.

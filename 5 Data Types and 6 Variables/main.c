@@ -1,10 +1,11 @@
 #include <stdbool.h>
 #include "exercise.h"
+#include <stdio.h>
 
 void
 printFloat(ieee_float64 number)
 {
-    printf("sign: 0x%x, exponent: 0x%x - %i, mantisse: 0x%lx\n",
+    printf("sign: 0x%ux, exponent: 0x%ux - %u, mantisse: 0x%lux\n",
             number.fields.sign,
             number.fields.exponent,
             number.fields.exponent-1023,
@@ -17,7 +18,7 @@ main(void)
 {
 
     bool all_tests_pass = test_runner();\
-    printf("size of ieee float 64 bit: %i\n", sizeof(ieee_float64));
+    printf("size of ieee float 64 bit: %lu\n", sizeof(ieee_float64));
 
     ieee_float64 first = {
             .number = 0.3

@@ -1,7 +1,7 @@
 #include "exercise.h"
 
 void
-test_Failing(void)
+test_Failing(TestSuite *suite)
 {
-    exercise7.passed &= false;
+    addFailResult(suite);
 }

@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <malloc.h>
 #include "test_util/test.h"
 #include "test_util/src/test.h"
 
@@ -120,7 +122,58 @@ printOk(void)
 }
 
 int
-evaluateTestSuite(TestSuite suite)
+evaluateTestSuite(TestSuite *suite)
 {
-    return !suite.passed;
+    bool all_tests_passed = true;
+    for (int i=0; i < suite->number_of_tests; i++)
+    {
+        all_tests_passed &= suite->passed[i];
+        if (!suite->passed[i])
+        {
+            setCommandLineColorToRed();
+            printf("Test Nr. %i failed.\n", i);
+            resetCommandLineColor();
+        }
+    }
+    return !all_tests_passed;
+}
+
+
+void
+initTestSuite(TestSuite *suite) {
+    memset(suite->passed, 1, suite->number_of_tests);
+    suite->current_test_number = 0;
+}
+
+void
+addFailResult(TestSuite *suite)
+{
+    suite->passed[suite->current_test_number] = false;
+    suite->current_test_number++;
+}
+
+void
+addPassResult(TestSuite *suite)
+{
+    suite->passed[suite->current_test_number] = true;
+    suite->current_test_number++;
+}
+
+TestSuite *
+createTestSuite(uint8_t maximum_number_of_tests)
+{
+    TestSuite *suite = malloc(sizeof(TestSuite));
+    suite->current_test_number = 0;
+    suite->number_of_tests = maximum_number_of_tests;
+    suite->passed = malloc(maximum_number_of_tests);
+    initTestSuite(suite);
+    return suite;
+}
+
+void
+destroyTestSuite(TestSuite **suite)
+{
+    free((*suite)->passed);
+    free(*suite);
+    *suite = NULL;
 }
