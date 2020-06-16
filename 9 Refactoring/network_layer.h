@@ -10,6 +10,7 @@ enum {
     ADDRESSING_FORMAT_DESTINATION64 = 2,
 };
 
+
 /**
  * A frame has the following layout
  * |Byte | Description             |

@@ -11,18 +11,19 @@ enum {
     MESSAGE_TYPE_POST = 'D',
 };
 
+typedef struct Message Message;
+
+struct Message
+{
+    const uint8_t *data;
+    size_t size;
+    uint16_t destination_address;
+    uint8_t type;
+};
+
 
 void
-sendACK(const uint8_t *data, size_t size, uint16_t destination_address);
-
-void
-sendNACK(const uint8_t *data, size_t size, uint16_t destination_address);
-
-void
-sendGET(const uint8_t *data, size_t size, uint16_t destination_address);
-
-void
-sendPOST(const uint8_t *data, size_t size, uint16_t destination_address);
+send(Message message);
 
 void
 receiveMessage(void *data);

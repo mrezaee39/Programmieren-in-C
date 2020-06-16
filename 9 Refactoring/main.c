@@ -1,4 +1,5 @@
 #include "network_layer.h"
+#include "message.h"
 
 int
 main(void)
@@ -8,9 +9,16 @@ main(void)
             0x01, 0x02,
             0x03, 0x04,
             0x05,
-            'A', 'B', 'C',
-            'a', 'b',
+            MESSAGE_TYPE_ACK, 'f', 'g',
+            'h', 'm',
     };
+    Message m = {
+            .data = frame+7,
+            .destination_address = 0x0201,
+            .size = 5,
+            .type = MESSAGE_TYPE_ACK,
+    };
+    send(m);
     sendFrame(frame);
 }
 
