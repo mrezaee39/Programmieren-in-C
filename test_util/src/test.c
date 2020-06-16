@@ -159,6 +159,17 @@ addPassResult(TestSuite *suite)
     suite->current_test_number++;
 }
 
+void
+addTestResult(TestSuite *suite, bool passed)
+{
+    if (passed)
+    {
+        addPassResult(suite);
+    } else {
+        addFailResult(suite);
+    }
+}
+
 TestSuite *
 createTestSuite(uint8_t maximum_number_of_tests)
 {

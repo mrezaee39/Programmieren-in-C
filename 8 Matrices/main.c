@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <test_util/test.h>
 #include "matrix.h"
 
 int
@@ -15,23 +17,29 @@ main(void)
     Matrix A = {
             .columns = 2,
             .rows = 2,
-            .data = data_A
+            .data = (float *)data_A
     };
 
     Matrix B = {
             .columns = 2,
             .rows = 2,
-            .data = data_B
+            .data = (float *)data_B
     };
 
-    bool passed = assertEqualMatrix(A, B);
-    if (passed)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+    Matrix C = {
+            .columns = 2,
+            .rows = 2,
+            .data = (float *)data_A
+    };
+    Matrix D = {
+            .columns = 3,
+            .rows = 100,
+            .data = (float *)data_A
+    };
 
+    TestSuite *suite = createTestSuite(3);
+    addTestResult(suite, assertUnequalMatrix(A, B)); // supposed to fail right now
+    addTestResult(suite, assertEqualMatrix(A, C)); // supposed to pass
+    addTestResult(suite, assertUnequalMatrix(D, A));
+    return evaluateTestSuite(suite);
 }

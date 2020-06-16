@@ -15,4 +15,7 @@ struct Matrix {
 bool
 assertEqualMatrix(Matrix expected, Matrix actual);
 
+bool
+assertUnequalMatrix(Matrix expected, Matrix actual);
+
 #endif //PROGRAMMING_C_MATRIX_H

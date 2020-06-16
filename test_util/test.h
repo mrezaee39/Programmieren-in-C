@@ -62,6 +62,9 @@ addFailResult(TestSuite *suite);
 void
 addPassResult(TestSuite *suite);
 
+void
+addTestResult(TestSuite *suite, bool passed);
+
 /**
  * This mallocs some stuff free with the corresponding destroy function destroyTestSuite
  * @param maximum_number_of_tests
