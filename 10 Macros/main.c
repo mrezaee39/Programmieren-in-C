@@ -1,10 +1,19 @@
-#define DEBUG_LEVEL DEBUG_VERBOSE
+#include <stdint.h>
 #include "debug.h"
 
-
-int main(void)
+int sum(int a, int b)
 {
-    debug_print(DEBUG_WARNINGS, "%s", "this is a warning\n");
-    debug_print(DEBUG_INFO, "%s", "this is some debug info\n");
-    debug_print(DEBUG_VERBOSE, "%s %i", "some text and a number: ", 42);
+    int result = a + b;
+    return result;
+}
+
+int
+main(void)
+{
+    int s = sum(1,2);
+    long *a = &s;
+    uint8_t byte = 0x05;
+    char *c = (char *)&byte;
+    debug_print(DEBUG_LEVEL_ERROR, "%s: %i\n", "ich bin ein debug string!", s);
+    debug_print(DEBUG_LEVEL_WARNING, "%s\n", "ich bin ne warning!");
 }
