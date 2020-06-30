@@ -27,9 +27,9 @@ Define fitting data structures to represent the following routing table
 Write a function `resolve` that takes a destination address as a string of format `a.b.c.d`
 and returns the address of the most specific gateway. The most specific gateway
 is the one with longest matching prefix. That means for the above routing table
-the function should return the gateway `243.854.0.100` for the destination
-address `243.854.2.5`. But for the destination address `243.854.33.5`
-the gateway `243.854.33.1` should be returned.
+the function should return the gateway `243.154.0.100` for the destination
+address `243.154.2.5`. But for the destination address `243.154.33.5`
+the gateway `243.154.33.1` should be returned.
 
 Use the `routing.{c,h}` files for your implementation and the `main.c` file
 to try and test whether your code behaves as you expect.

@@ -30,7 +30,11 @@ struct StringifiedRoute
 
 
 Route
-deserializeRoutingTableEntry(StringifiedRoute *route);
+deserializeRoute(StringifiedRoute *route);
+
+
+StringifiedRoute
+serializeRoute(const Route *route);
 
 uint32_t
 deserializeIP(const char* ip_string);
