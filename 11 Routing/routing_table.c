@@ -62,8 +62,8 @@ matchDestinationToRoute(uint32_t destination, Route route)
         uint32_t masked_destination = bitmask & destination;
         result.match = masked_destination == masked_network_ip;
         result.match_score = route.network_id.bitmask_length;
-        result.route = route;
     }
+    result.route =  route;
     return result;
 }
 

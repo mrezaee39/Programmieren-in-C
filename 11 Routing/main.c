@@ -41,4 +41,8 @@ main(void)
 
     route = deserializeRoutingTableEntry(table.entries+1);
     assertEqualIntHex(route.gateway, resolveRouteToGateway(destination, &table));
+
+    route = deserializeRoutingTableEntry(table.entries+2);
+    destination = "8.8.8.8";
+    assertEqualIntHex(route.gateway, resolveRouteToGateway(destination, &table));
 }
