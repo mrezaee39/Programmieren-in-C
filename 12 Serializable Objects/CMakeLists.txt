@@ -1,0 +1,1 @@
+add_executable(12_SerializeObjects main.c json.c json.h linked_list.c linked_list.h)
