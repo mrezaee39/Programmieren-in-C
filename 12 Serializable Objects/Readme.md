@@ -12,3 +12,13 @@ Design and implement an API that can be used to construct
 JSON Objects and write them to files using the functions in
 the `stdio.h` header. We do not need to read and parse json
 files for now.
+
+
+# 13 - Testing
+
+The function `JSON_dump` shall write a serialized
+version of a given `JSON` data structure.
+Which ways do we have to unit test this?
+What are possible advantages/disadvantages?
+What possibilities do different testing
+approaches leave for the resulting api?
