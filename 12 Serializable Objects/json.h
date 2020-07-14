@@ -31,6 +31,9 @@ struct JSONEntry {
 JSON*
 JSON_new(void);
 
+void
+JSON_destroy(JSON **self);
+
 JSONEntry *
 JSON_addInteger(JSON *self, const char *key, long number);
 
@@ -47,7 +50,7 @@ JSONEntry *
 JSON_get(JSON *self, const char *key);
 
 
-bool
+void
 JSON_dump(JSON *self, Writer *writer);
 
 
