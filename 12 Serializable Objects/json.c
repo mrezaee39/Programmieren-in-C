@@ -2,7 +2,6 @@
 #include <malloc.h>
 #include <string.h>
 #include "linked_list.h"
-#include "writer.h"
 
 typedef struct JSONNode
 {
@@ -98,23 +97,4 @@ JSON_destroy(JSON **self)
     }
     free(last);
     *self = NULL;
-}
-
-void
-JSON_dump(JSON *self, Writer *writer)
-{
-    Writer_open(writer);
-    Writer_write(writer, "{");
-    if (self != NULL)
-    {
-        ListNode *current_node = (ListNode *) self;
-        do {
-            Writer_write(NULL, " 'my special number': 0 ");
-            current_node = current_node->next;
-        } while (current_node != (ListNode *)self);
-    }
-
-    Writer_write(writer, "}");
-    Writer_close(writer);
-    // to be continued...
 }

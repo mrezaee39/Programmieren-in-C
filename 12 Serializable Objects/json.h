@@ -51,7 +51,7 @@ JSON_get(JSON *self, const char *key);
 
 
 void
-JSON_dump(JSON *self, Writer *writer);
+JSON_dump(JSON *self, ...);
 
 
 #endif //PROGRAMMING_C_JSON_H

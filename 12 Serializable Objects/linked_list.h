@@ -44,7 +44,7 @@ List_getLastNode(ListNode *self)
     ListNode *current = self;
     for(; current->next != self; current = current->next)
         ;
-    return self;
+    return current;
 }
 
 #endif //PROGRAMMING_C_LINKED_LIST_H
