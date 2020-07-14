@@ -1,6 +1,7 @@
 #include "json.h"
 #include <malloc.h>
 #include <string.h>
+#include "writer.h"
 #include "linked_list.h"
 
 typedef struct JSONNode
@@ -97,4 +98,57 @@ JSON_destroy(JSON **self)
     }
     free(last);
     *self = NULL;
+}
+
+bool
+isEmpty(JSON *self)
+{
+    JSONNode *json = (JSONNode *)self;
+    return json->entry.key == NULL;
+}
+
+static void writeInteger(JSONEntry *entry, Writer *writer);
+static void writeFloat(JSONEntry *entry, Writer *writer);
+static void writeJSONEntry(JSONEntry *entry, Writer *writer);
+
+static void (*write[]) (JSONEntry *entry, Writer *writer) = {
+        writeInteger,
+        writeFloat,
+};
+
+
+
+void
+JSON_dump(JSON *self, Writer *writer)
+{
+    Writer_write(writer, "{");
+    if (self != NULL && !isEmpty(self))
+    {
+        JSONNode *json = (JSONNode *) self;
+        Writer_write(writer, " '': ");
+        writeJSONEntry(&json->entry, writer);
+    }
+    Writer_write(writer, " }");
+}
+
+static void
+writeJSONEntry(JSONEntry *entry, Writer *writer)
+{
+    write[entry->type](entry, writer);
+}
+
+static void
+writeInteger(JSONEntry *entry, Writer *writer)
+{
+    char buffer[12];
+    sprintf(buffer, "%li", entry->value.integer);
+    Writer_write(writer, buffer);
+}
+
+static void
+writeFloat(JSONEntry *entry, Writer *writer)
+{
+    char buffer[12];
+    sprintf(buffer, "%f", entry->value.floating_point);
+    Writer_write(writer, buffer);
 }

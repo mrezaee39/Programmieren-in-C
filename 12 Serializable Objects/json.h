@@ -49,9 +49,14 @@ JSON_addEntry(JSON *self, JSONEntry *entry);
 JSONEntry *
 JSON_get(JSON *self, const char *key);
 
-
+/**
+ *
+ * @param self
+ * @param writer: Expects an opened correctly initialized Writer struct.
+ *  After call to JSON_dump it is up to the caller to close and destroy the Writer.
+ */
 void
-JSON_dump(JSON *self, ...);
+JSON_dump(JSON *self, Writer *writer);
 
 
 #endif //PROGRAMMING_C_JSON_H
