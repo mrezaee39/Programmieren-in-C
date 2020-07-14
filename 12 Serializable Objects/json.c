@@ -91,7 +91,7 @@ void
 JSON_destroy(JSON **self)
 {
     ListNode *last = List_getLastNode((ListNode *) *self);
-    while (last->previous != last)
+    while (last->previous != (ListNode *)*self)
     {
         last = last->previous;
         free(last->next);
@@ -111,7 +111,7 @@ JSON_dump(JSON *self, Writer *writer)
         do {
             Writer_write(NULL, " 'my special number': 0 ");
             current_node = current_node->next;
-        } while (current_node != current_node->next);
+        } while (current_node != (ListNode *)self);
     }
 
     Writer_write(writer, "}");

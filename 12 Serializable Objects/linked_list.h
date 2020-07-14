@@ -41,7 +41,8 @@ List_insert(ListNode *self, ListNode *new)
 static inline ListNode *
 List_getLastNode(ListNode *self)
 {
-    for(; self->next != self; self = self->next)
+    ListNode *current = self;
+    for(; current->next != self; current = current->next)
         ;
     return self;
 }
