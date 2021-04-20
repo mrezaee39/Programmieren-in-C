@@ -16,15 +16,10 @@ In the following we assume you are using CLion.
   This should open the project management dialog window.
 * Click *Get From Version Control* and enter the url
     ```
-    https://git.uni-due.de/embedded-systems/exercises/programming-c.git
+    https://git.uni-due.de/embedded-systems/exercises/programming-c-sose-21.git
     ```
   and a path of your choice that determines where the project will be saved.
 
 Every Week we will upload new content to the git repository.
 To pull in any new changes hit `Ctrl+T`,
  check `Merge incoming changes into the current branch` and hit `Enter`
- 
-## Solutions
-There is a solutions branch that contains the solutions
-created during the exercises. To checkout the branch
-click 
