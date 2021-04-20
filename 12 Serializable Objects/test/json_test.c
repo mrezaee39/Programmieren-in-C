@@ -99,6 +99,7 @@ test_checkForWriterArgumentWithFloat(void)
 }
 
 
+
 int
 main(void)
 {

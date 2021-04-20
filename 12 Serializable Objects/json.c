@@ -3,6 +3,7 @@
 #include <string.h>
 #include "writer.h"
 #include "linked_list.h"
+#include "writer.h"
 
 typedef struct JSONNode
 {
