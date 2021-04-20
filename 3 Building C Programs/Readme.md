@@ -120,8 +120,3 @@ nm main
 ```
 **How does the output differ from the output for the library and what is the reason for
 this result?**
-
-**When looking at the `fibonacci_test.c` file you will notice
-three include directives. Strictly speaking one of them
-is not necessary. Which one is that and why do we list
-it anyway?**

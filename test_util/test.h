@@ -50,11 +50,36 @@ typedef struct TestSuite TestSuite;
  * }
  */
 int
-evaluateTestSuite(TestSuite);
+evaluateTestSuite(TestSuite *);
+
+
+void
+initTestSuite(TestSuite *suite);
+
+void
+addFailResult(TestSuite *suite);
+
+void
+addPassResult(TestSuite *suite);
+
+void
+addTestResult(TestSuite *suite, bool passed);
+
+/**
+ * This mallocs some stuff free with the corresponding destroy function destroyTestSuite
+ * @param maximum_number_of_tests
+ * @return
+ */
+TestSuite *
+createTestSuite(uint8_t maximum_number_of_tests);
+
+void
+destroyTestSuite(TestSuite **);
 
 struct TestSuite
 {
-    bool passed;
+    bool *passed;
+    uint8_t current_test_number;
     uint8_t number_of_tests;
 };
 
