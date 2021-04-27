@@ -16,7 +16,7 @@ In the following we assume you are using CLion.
   This should open the project management dialog window.
 * Click *Get From Version Control* and enter the url
     ```
-    https://git.uni-due.de/embedded-systems/exercises/programming-c-sose-21.git
+    https://git.uni-due.de/embedded-systems/teaching/programming-c-sose-21.git
     ```
   and a path of your choice that determines where the project will be saved.
 
