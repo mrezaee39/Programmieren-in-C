@@ -39,13 +39,13 @@ int
 main(void)
 {
     // 1. Initialize the array with the correct "Hello, World!" string
-    char helloWorld[20] = "";
+    char helloWorld[20] = "Hello, World!";
     checkThatStringIsHelloWorld(helloWorld);
 
     // 2. adjust the values of firstCondition and secondCondition to make the check pass
     puts("2. Entering else if statement check...");
-    bool firstCondition = true;
-    bool secondCondition = true;
+    bool firstCondition = false;
+    bool secondCondition = false;
     if (firstCondition)
     {
         puts("Wrong\n");
@@ -60,9 +60,8 @@ main(void)
     }
 
     // 3. Fill the array numbers with the numbers from 0 to 9
-    int replace_this_counter = 26;
     int numbers[10];
-    for (; replace_this_counter < 10; )
+    for (int replace_this_counter = 0; replace_this_counter < 10; replace_this_counter++)
     {
         numbers[replace_this_counter] = replace_this_counter;
     }
@@ -73,7 +72,7 @@ main(void)
      *  and add one line to one of the cases
      *  so that the check passes (prints "Correct")
      */
-    int switch_case_number = 0;
+    int switch_case_number = 1;
     puts("4. Entering switch case check...");
     bool switch_case_correct = false;
     switch(switch_case_number)
@@ -82,6 +81,7 @@ main(void)
             break;
         case 1:
             switch_case_correct = true;
+            break;
         case 2:
             switch_case_correct = false;
         default:
@@ -92,19 +92,19 @@ main(void)
     /* 5.
      * In the task below the boolean expression in the while
      * loop is messed up. Correct it to make the test pass.
+     * Assume you have no knowledge about the array `set_of_numbers`.
      */
     puts("5. Entering while loop check...");
     int set_of_numbers[] =  {0, 4, 8, 1, 9, 5, 6, 2, 3};
     int index = 0;
-    int first_number_greater4_smaller6 = set_of_numbers[index];
+    int first_number_greater4_smaller7 = set_of_numbers[index];
 
-    while(4 < first_number_greater4_smaller6
-          && first_number_greater4_smaller6 < 6)
+    while(!(first_number_greater4_smaller7 > 4 && first_number_greater4_smaller7 < 7))
     {
         index++;
-        first_number_greater4_smaller6 = set_of_numbers[index];
+        first_number_greater4_smaller7 = set_of_numbers[index];
     }
-    printCheckResult(first_number_greater4_smaller6 == 5);
+    printCheckResult(first_number_greater4_smaller7 == 5);
 
     /* 6.
      * In this task we want to perform a calculation
@@ -122,11 +122,7 @@ main(void)
      */
 
     puts("6. Entering function call check... (will perform two checks)");
-    int sum = 0;
-    for (int to = 5; to > 0; to--)
-    {
-        sum += to;
-    }
+
 
     int result = sumNumbersUpTo(50);
     printCheckResult(result == 1275);
@@ -141,8 +137,12 @@ main(void)
 int
 sumNumbersUpTo(int to)
 {
-    // Your code...
-    return 0;
+  int sum = 0;
+  for (; to > 0; to--)
+    {
+      sum += to;
+    }
+  return sum;
 }
 
 
