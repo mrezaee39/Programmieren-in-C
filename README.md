@@ -6,6 +6,7 @@ as we progress. **Important**: Exercises not listed here are still subject to ch
 so do not work ahead of this list.
 
 * [Week 2 - First C Program](2 First C Program/Readme.md)
+* [Week 3 - Building C Programs](3 Building C Programs/Readme.md)
 
 ## Using the Exercises
 We strongly recommend using an IDE (e.g. CLion).
