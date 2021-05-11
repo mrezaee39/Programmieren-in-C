@@ -1,32 +1,16 @@
 #include "exercise.h"
 #include "test_util/test.h"
-#include <stdio.h>
 #include <stdint.h>
-#include "limits.h"
-
+#include <stdio.h>
+#include <limits.h>
 
 bool
 test_shortDataTypeSize(void) {
-    return assertEqualIntWithMessage(sizeof(short), 0,
+    return assertEqualIntWithMessage(sizeof(short), 2,
                                      "Which size does your system use for short data types?");
 }
 
-bool
-test_countToLargeNumber(void) {
-    char counter_value = 0;
-    /*
-     * The 5 lines below are commented out, because the code will not
-     * terminate. How can you fix that problem?
-     * How can we be sure the fix works for all people taking
-     * the exercise?
-     */
-//    printf("counter value: ");
-//    for (; counter_value < 65535; counter_value++) {
-//    }
-//    printf("%i ", counter_value);
 
-    return assertEqualInt(65535, counter_value);
-}
 
 bool
 test_textLength(void) {
@@ -34,6 +18,23 @@ test_textLength(void) {
     char text[] = "How long is this text?";
     // <your code that calculates the length of the string text goes here>
     return assertEqualIntWithMessage(22, text_length, "Calculated text length should be");
+}
+
+bool
+test_countToLargeNumber(void) {
+  int counter_value = 0;
+  /*
+   * The 5 lines below are commented out, because the code will not
+   * terminate. How can you fix that problem?
+   * How can we be sure the fix works for all people taking
+   * the exercise?
+   */
+  printf("counter value: ");
+  for (; counter_value < 65535; counter_value++) {
+    }
+  printf("%i ", counter_value);
+
+  return assertEqualInt(65535, counter_value);
 }
 
 bool
@@ -50,7 +51,8 @@ test_initializeInt(void) {
     // With what you learned above,
     // initialize the variable below with the correct value
     // to make the test pass.
-    unsigned int max_int = 0;
+
+    unsigned int max_int = UINT_MAX;
     return assertEqualUInt(0, max_int + 1);
 }
 
