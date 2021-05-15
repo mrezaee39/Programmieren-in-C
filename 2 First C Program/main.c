@@ -38,8 +38,8 @@ printCheckResult(bool condition);
 int
 main(void)
 {
-    // 1. Initialize the array with the correct "Hello, World!" string
-    char helloWorld[20] = "Hello, World!";
+    /// 1. Initialize the array with the correct "Hello, World!" string
+    char helloWorld[20] = "Hello, World!!!";
     checkThatStringIsHelloWorld(helloWorld);
 
     // 2. adjust the values of firstCondition and secondCondition to make the check pass
