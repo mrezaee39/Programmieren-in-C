@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include "exercise.h"
 #include "test_util/test.h"
+#include "ieee_float64.h"
 #include <stdio.h>
 
 /**
@@ -12,6 +13,7 @@
  *
  * You will have to create the correct data type to make the tests pass.
  */
+
 
 
 
@@ -37,7 +39,7 @@ test_custom_float_sign_is_negative(void)
 }
 
 bool
-test_custom_float_sign_is_positive(void)
+test_custom_float_sign_is_one(void)
 {
     ieee_float64 my_float = {.number = -1.};
     return assertEqualInt(1, my_float.fields.sign);
@@ -64,11 +66,11 @@ test_runner(void)
 {
     bool all_tests_pass = true;
     bool (*test_functions[])(void) = {
-            test_custom_float_has_assignable_fields,
-            test_custom_float_sign_is_negative,
-            test_custom_float_sign_is_positive,
-            test_custom_float_mantisse_is_correct,
-            test_custom_float_exponent_is_correct,
+        test_custom_float_has_assignable_fields,
+        test_custom_float_sign_is_negative,
+        test_custom_float_sign_is_one,
+        test_custom_float_mantisse_is_correct,
+        test_custom_float_exponent_is_correct,
     };
     int NUMBER_OF_TESTS = 5;
     printf("Executing %i tests.\n", NUMBER_OF_TESTS);
