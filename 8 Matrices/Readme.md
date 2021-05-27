@@ -1,7 +1,5 @@
 # 8 - Matrices
 
-This week we want to introduce support for a new data type into the `test_util` library.
-The function `assertEqualMatrices(Matrix left, Matrix right)` shall be implemented.
-When calling the function it shall output the row and the column of the first element that
-is different between the left and the right matrix.
-In the header `matrix.h` we provide a definition of the data structure.
+Based on last weeks exercise, develop a multiply function for matrices.
+Try to make it as user friendly, safe, maintainable and flexible as possible.
+You don't need to start from scratch. Instead try to improve and extend last weeks code with the help of your new knowledge.
