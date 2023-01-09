@@ -11,6 +11,11 @@ main(void)
       .data = left_data,
       .length = sizeof(left_data) / sizeof(float)
   };
+  /*Vector left;
+  left.length=10;
+  left.data=left_data
+   left->data={1,2,3}
+   */
   float right_data[] = {3, 2, 1};
   Vector right = {
       .data = right_data,

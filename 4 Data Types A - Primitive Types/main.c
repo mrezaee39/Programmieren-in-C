@@ -1,8 +1,11 @@
 #include "exercise.h"
-
-
+int a;
+int b;
+static int t;
+bool all_tests_pass
 int main(void)
 {
+
     bool all_tests_pass = true;
     all_tests_pass &= test_shortDataTypeSize();
     all_tests_pass &= test_textLength();
@@ -20,3 +23,15 @@ int main(void)
         return 1;
     }
 }
+int functiom()
+{all_tests_pass=true}
+int c;
+int functiom()
+{}
+int functiom()
+{}
+int functiom()
+{}
+
+
+

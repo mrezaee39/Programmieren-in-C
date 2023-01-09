@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/programming-c-sose-21/5 Custom Data Types and Variables/exercise.c
+stdbool.h
+-
+exercise.h
+E:/programming-c-sose-21/5 Custom Data Types and Variables/exercise.h
+test_util/test.h
+E:/programming-c-sose-21/5 Custom Data Types and Variables/test_util/test.h
+ieee_float64.h
+E:/programming-c-sose-21/5 Custom Data Types and Variables/ieee_float64.h
+stdio.h
+-
+
+E:/programming-c-sose-21/5 Custom Data Types and Variables/exercise.h
+stdint.h
+-
+
+E:/programming-c-sose-21/5 Custom Data Types and Variables/ieee_float64.h
+stdint.h
+-
+ieee754.h
+-
+
+E:/programming-c-sose-21/5 Custom Data Types and Variables/main.c
+stdbool.h
+-
+exercise.h
+E:/programming-c-sose-21/5 Custom Data Types and Variables/exercise.h
+stdio.h
+-
+ieee_float64.h
+E:/programming-c-sose-21/5 Custom Data Types and Variables/ieee_float64.h
+

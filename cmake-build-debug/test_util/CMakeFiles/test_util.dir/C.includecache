@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../test_util/src/test.h
+
+../test_util/test.h
+stdbool.h
+-
+stdint.h
+-
+
+E:/programming-c-sose-21/test_util/src/test.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+test_util/test.h
+E:/programming-c-sose-21/test_util/src/test_util/test.h
+test_util/src/test.h
+E:/programming-c-sose-21/test_util/src/test_util/src/test.h
+

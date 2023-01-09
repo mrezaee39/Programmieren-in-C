@@ -11,11 +11,11 @@ test_shortDataTypeSize(void) {
 }
 
 
-
 bool
 test_textLength(void) {
     int text_length = 0;
     char text[] = "How long is this text?";
+
     // <your code that calculates the length of the string text goes here>
     return assertEqualIntWithMessage(22, text_length, "Calculated text length should be");
 }
@@ -30,8 +30,9 @@ test_countToLargeNumber(void) {
    * the exercise?
    */
   printf("counter value: ");
-  for (; counter_value < 65535; counter_value++) {
+  for (; counter_value <65535; counter_value++) {
     }
+
   printf("%i ", counter_value);
 
   return assertEqualInt(65535, counter_value);
@@ -52,7 +53,7 @@ test_initializeInt(void) {
     // initialize the variable below with the correct value
     // to make the test pass.
 
-    unsigned int max_int = UINT_MAX;
+    unsigned int max_int = UINT_MAX-1;
     return assertEqualUInt(0, max_int + 1);
 }
 

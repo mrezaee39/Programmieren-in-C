@@ -39,8 +39,27 @@ int
 main(void)
 {
     /// 1. Initialize the array with the correct "Hello, World!" string
-    char helloWorld[20] = "Hello, World!!!";
+    char helloWorld[20] = "Hello, World!";
     checkThatStringIsHelloWorld(helloWorld);
+    int counter_value=0;
+    printf("%d ", counter_value);
+    for (; counter_value < 256; counter_value++) {
+    }
+
+    //printf("%i ", UINT_MAX);
+
+    double should_reach_03 = 0;
+    should_reach_03 += 0.1;
+    printf("%f\n",should_reach_03);
+    //assertEqualDouble(0.1, should_reach_03);
+    should_reach_03 += 0.1;
+    printf("\n%f\n",should_reach_03);
+   //assertEqualDouble(0.2, 0.2);
+    should_reach_03 += 0.1;
+    printf("\n%f\n",should_reach_03);
+//name[]={'H',......,'\0'};
+    //char name[] ="How long is this text?";
+    //printf("\n\nsizeofint=%d\n\n",sizeof(UINT_MAX));
 
     // 2. adjust the values of firstCondition and secondCondition to make the check pass
     puts("2. Entering else if statement check...");
@@ -99,7 +118,7 @@ main(void)
     int index = 0;
     int first_number_greater4_smaller7 = set_of_numbers[index];
 
-    while(!(first_number_greater4_smaller7 > 4 && first_number_greater4_smaller7 < 7))
+    while(!(first_number_greater4_smaller7 > 4 && first_number_greater4_smaller7 < 8))
     {
         index++;
         first_number_greater4_smaller7 = set_of_numbers[index];

@@ -21,7 +21,7 @@ sum (Vector vector)
   }
   return result;
 }
-
+// (1 2 3).(2 1 3) =2+2+9=13
 float
 dot (Vector left, Vector right)
 {
